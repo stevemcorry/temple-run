@@ -3,6 +3,7 @@ div {
 }
 .temples {
     text-align: center;
+    margin: 30px;
 }
 .bingo {
     display: inline-block;
@@ -15,6 +16,12 @@ div {
     height: 25%;
     width: 23%;
     text-align: center;
-    background: #7ce7e7;
+    background: url('../../assets/TemplePics/moroni.jpg');
     border: 2px solid blue;
+    background-size: cover; 
+    margin-bottom: 4px;
+}
+.line {
+    height: 1px;
+    background: lightgrey;
 }
