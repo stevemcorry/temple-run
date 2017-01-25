@@ -1,0 +1,16 @@
+.header {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 5vw;
+    width: 100vw;
+    border-bottom: 1px solid lightgrey;
+}
+.item {
+    display: inline-block;
+}
+input {
+    margin: 0 25vw 0 25vw;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}

@@ -1,0 +1,12 @@
+.bingo {
+    display: table;
+    width: 80vw;
+    margin: auto;
+}
+div {
+    display: inline-block;
+    height: 25px;
+    width: 23%;
+    text-align: center;
+    background: red;
+}

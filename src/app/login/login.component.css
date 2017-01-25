@@ -1,0 +1,22 @@
+main {
+    display: table;
+    height: 80vh;
+    width: 50vw;
+    margin: auto;
+    background: lightgrey;
+}
+.loginModal{
+    display: table-cell;
+    vertical-align: middle;
+}
+.inputs {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+.item {
+    margin: 25px;
+}
+input {
+    height: 30px;
+}

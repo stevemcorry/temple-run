@@ -1,0 +1,20 @@
+div {
+    background: #fafafa;
+}
+.temples {
+    text-align: center;
+}
+.bingo {
+    display: inline-block;
+    width: 70vw;
+    height: 70vw;
+    margin: auto;
+}
+.temple {
+    display: inline-block;
+    height: 25%;
+    width: 23%;
+    text-align: center;
+    background: #7ce7e7;
+    border: 2px solid blue;
+}
