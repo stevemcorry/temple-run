@@ -1,15 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+const keys = require('../../../config.js')
+require('aws-sdk/dist/aws-sdk');
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
 
-  constructor() { }
-
-  ngOnInit() {
+  fileEvent(fileInput:any){    
+    let AWSService = (<any>window).AWS;
+    console.log(AWSService);
+    let file = fileInput.target.files[0];
+    AWSService.config.accessKeyId = keys.accessKey;
+    AWSService.config.secretAccessKey = keys.secretKey;
+    let bucket = new AWSService.S3({params: {Bucket : 'temple-run'}});
+    let params = {Key: file.name, Body: file};
+    bucket.upload(params, function(error,res){
+      console.log('error', error);
+      console.log('resp',res);
+      
+    })
   }
 
 }
