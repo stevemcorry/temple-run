@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-const keys = require('../../../config.js')
 require('aws-sdk/dist/aws-sdk');
+const keys = require('../../../config.js')
 
 @Component({
   selector: 'app-profile',
