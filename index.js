@@ -21,6 +21,12 @@ app.use(session({
 }));
 app.use(bodyParser.json());
 
+app.get('/api/get', (req,res)=> {
+  db.get_images((err,resp)=>{ 
+    console.log(err,resp); res.json(resp) 
+  })
+})
+
 
 app.listen(8000, function(){
     console.log('starting')
