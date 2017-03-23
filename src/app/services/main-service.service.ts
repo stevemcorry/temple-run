@@ -10,9 +10,36 @@ export class MainService {
     check(res) {
       console.log(res);
     }
-    getImages(){
+    addUser(user){
+      return this.http.post(`/api/post/user`, user)
+      .map(data=>{
+        console.log(data)
+        return data.json();
+      });
+    }
+    getImages(image){
       console.log('function hit');
-      return this.http.get(`http://localhost:8000/api/get`);
+      return this.http.post(`/api/get/images`, image)
+      .map(data=>{
+        console.log(data)
+        return data.json();
+      });
+    }
+    postImage(image){
+      console.log('function hit');
+      return this.http.post(`/api/post/images`, image)
+      .map(data=>{
+        console.log(data)
+        return data.json();
+      });
+    }
+    getUser(){
+      console.log('function hit');
+      return this.http.get(`/api/get/users`)
+      .map(data=>{
+        console.log(data)
+        return data.json();
+      });
     }
 
 

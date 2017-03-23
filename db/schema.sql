@@ -1,11 +1,13 @@
 CREATE TABLE users (
-    id SERIAL,
-    email NOT NULL UNIQUE,
-    pass NOT NULL UNIQUE
+    id SERIAL NOT NULL PRIMARY KEY,
+    user TEXT NOT NULL UNIQUE,
+    email TEXT NOT NULL UNIQUE,
+    pass TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE images (
     id SERIAL,
-    user_id  INT REFERENCES users(id),
-    url TEXT
+    FOREIGN KEY user_id  INT REFERENCES users(id) NOT NULL,
+    url TEXT NOT NULL,
+    position INTEGER NOT NULL
 )

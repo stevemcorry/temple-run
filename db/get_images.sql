@@ -1,1 +1,2 @@
-SELECT * FROM new;
+SELECT * FROM images
+WHERE user = $1;

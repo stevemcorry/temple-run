@@ -21,13 +21,33 @@ app.use(session({
 }));
 app.use(bodyParser.json());
 
-app.get('/api/get', (req,res)=> {
-  db.get_images((err,resp)=>{ 
-    console.log(err,resp); res.json(resp) 
+
+app.get('/api/get/users', (req,res)=> {
+  db.get_user((err,resp)=>{
+    res.json(resp) 
+  })
+})
+
+app.post('/api/post/user', (req,res) => {
+  console.log(req.body);
+  db.post_user([req.body.userName, req.body.password], (err, resp) => {
+    res.json(resp) 
+  })
+})
+
+app.post('/api/get/images', (req,res)=> {
+  db.get_images([req.body.user],(err,resp)=>{
+    res.json(resp) 
+  })
+})
+
+app.post('/api/post/image', (req,res) => {
+  db.post_image([req.body.user, req.body.url, req.body.position], (err, resp) => {
+    res.json(resp) 
   })
 })
 
 
-app.listen(8000, function(){
-    console.log('starting')
+app.listen(4001, function(){
+    console.log('started')
 })

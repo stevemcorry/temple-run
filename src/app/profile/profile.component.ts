@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit{
     const event = data => this.mainService.check(data)
     let data;    
     let AWSService = (<any>window).AWS;
-    //console.log(AWSService);
     let file = fileInput.target.files[0];
     AWSService.config.accessKeyId = keys.accessKey;
     AWSService.config.secretAccessKey = keys.secretKey;
@@ -29,7 +28,7 @@ export class ProfileComponent implements OnInit{
   }
 
  ngOnInit(){
-   this.mainService.getImages().subscribe(res => {console.log(res);
+   this.mainService.getUser().subscribe(res => {console.log(res);
    })
  }
 
