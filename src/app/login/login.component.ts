@@ -21,8 +21,11 @@ export class LoginComponent implements OnInit{
           password: this.password
         }
         this.mainService.addUser(user).subscribe(res => {
-          this.cookie.put('name', this.userName)
-          this.cookie.put('pass', this.password)
+          let user = res[0]
+          console.log(res, 'login')
+          this.cookie.put('name', user.username)
+          this.cookie.put('pass', user.pass)
+          this.cookie.put('id', user.id)
           this.router.navigateByUrl('/home')
         });
       } else {

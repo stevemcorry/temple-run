@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
+import {CookieService} from 'angular2-cookie/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class MainService {
 
-  constructor(private http: Http){}
+  constructor(private http: Http, private cookie: CookieService){}
 
     check(res) {
-      console.log(res);
+      let image = {
+        url: res.Location,
+        position: 1,
+        user: this.cookie.get('id')
+      }
+      console.log(res, image);
     }
     addUser(user){
       return this.http.post(`/api/post/user`, user)
