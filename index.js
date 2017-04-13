@@ -41,7 +41,7 @@ app.post('/api/get/images', (req,res)=> {
   })
 })
 
-app.post('/api/post/image', (req,res) => {
+app.post('/api/post/images', (req,res) => {
   db.post_image([req.body.user, req.body.url, req.body.position], (err, resp) => {
     res.json(resp) 
   })

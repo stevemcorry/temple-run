@@ -14,7 +14,9 @@ export class MainService {
         position: 1,
         user: this.cookie.get('id')
       }
-      console.log(res, image);
+      this.postImage(image).subscribe(data => {
+        console.log(data, 'image posted')
+      });
     }
     addUser(user){
       return this.http.post(`/api/post/user`, user)
@@ -27,7 +29,6 @@ export class MainService {
       console.log('function hit');
       return this.http.post(`/api/get/images`, image)
       .map(data=>{
-        console.log(data)
         return data.json();
       });
     }
